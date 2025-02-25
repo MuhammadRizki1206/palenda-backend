@@ -1,4 +1,3 @@
-import bcrypt from "bcrypt";
 import UserService from "../services/UserServices";
 import { UserPayload } from "../types/User";
 
