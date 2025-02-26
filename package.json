@@ -16,16 +16,13 @@
     "dotenv": "^16.4.5",
     "elysia": "latest",
     "jsonwebtoken": "^9.0.2",
-    "multer": "^1.4.5-lts.1",
     "prisma": "^5.15.0",
     "prisma-import": "^1.0.5"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/bun": "^1.2.3",
-    "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.6",
-    "@types/multer": "^1.4.12",
     "bun-types": "latest"
   },
   "compilerOptions": {
