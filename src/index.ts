@@ -3,6 +3,7 @@ import { cookie } from "@elysiajs/cookie";
 import { jwt } from "@elysiajs/jwt";
 import { auth } from "./auth/index";
 import userRoutes from "./routes/UserRoutes";
+import productRoutes from "./routes/ProductRoutes";
 
 const app = new Elysia()
   .group("/api", (app) =>
@@ -16,6 +17,7 @@ const app = new Elysia()
       .use(cookie())
       .use(auth)
       .use(userRoutes)
+      .use(productRoutes)
   )
   .listen(3001);
 console.log(
