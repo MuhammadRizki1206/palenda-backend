@@ -1,10 +1,11 @@
 import { Elysia } from "elysia";
 import ProductController from "../controllers/ProductController";
 import { uploadFile } from "../middleware/upload";
+import { authPlugin } from "../middleware/auth";
 
-const productRoutes = new Elysia({ prefix: "/product" }).post(
-  "/upload",
-  async ({ request }) => {
+const productRoutes = new Elysia({ prefix: "/product" })
+  .use(authPlugin)
+  .post("/upload", async ({ request }) => {
     try {
       const file = await uploadFile(request);
 
@@ -16,7 +17,6 @@ const productRoutes = new Elysia({ prefix: "/product" }).post(
       console.error("Upload error:", error);
       return { error: error };
     }
-  }
-);
+  });
 
 export default productRoutes;

@@ -81,6 +81,7 @@ export const auth = (app: Elysia) =>
               id: true,
               hash: true,
               salt: true,
+              username: true,
             },
           });
 
@@ -136,7 +137,8 @@ export const auth = (app: Elysia) =>
           return {
             message: "Sig-in successfully",
             data: {
-              user,
+              userid: user.id,
+              username: user.username,
               accessToekn: accessJWTToken,
               refreshToken: refreshJWTToken,
             },
